@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:text="@string/scan_qr_code"
             android:background="@color/colorGreen"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:layout_marginTop="32dp"/>
 
     </LinearLayout>
 
