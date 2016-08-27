@@ -1,9 +1,6 @@
 package com.androidtitan.hackathon.main;
 
-import com.androidtitan.hackathon.base.MvpPresenter;
 import com.androidtitan.hackathon.base.MvpView;
-
-import java.util.List;
 
 /**
  * Created by amohnacs on 8/22/16.
@@ -35,6 +32,9 @@ public interface MainMVP {
         void displaySomething();
 
         void sendUserToLoginActivity();
+
     }
+
+
 
 }

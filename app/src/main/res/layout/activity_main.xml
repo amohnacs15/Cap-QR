@@ -72,7 +72,7 @@
                 android:imeOptions="actionNext"
                 android:hint="Password"
                 android:drawablePadding="4dp"
-                android:inputType="textEmailAddress|textNoSuggestions"
+                android:inputType="textPassword"
                 android:minWidth="350dp"
                 android:drawableLeft="@drawable/ic_https_black_24dp"
                 android:drawableStart="@drawable/ic_https_black_24dp"
@@ -87,13 +87,13 @@
 
 
     <Button
-        android:text="Sign in"
+        android:text="@string/action_login"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/button2" />
+        android:id="@+id/signInButton" />
 
 
 </RelativeLayout>
