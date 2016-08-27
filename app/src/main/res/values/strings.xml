@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">CapQR</string>
     <string name="action_login">Sign In</string>
-    <string name="hint_password">password</string>
+    <string name="hint_password">Password</string>
     <string name="hint_email">email</string>
     <string name="login">Login</string>
     <string name="signout">Sign Out</string>
     <string name="scan">scan</string>
+    <string name="userName">Username</string>
     <string name="accountInfo">Welcome you currently have</string>
     <string name="sendMoney">Send Money</string>
     <string name="receiveMoney">Receive Money</string>
