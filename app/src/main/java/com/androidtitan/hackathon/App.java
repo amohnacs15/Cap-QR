@@ -1,14 +1,9 @@
 package com.androidtitan.hackathon;
 
 import android.app.Application;
-import android.content.Context;
 import android.support.v4.util.Pair;
 
-
-import com.androidtitan.hackathon.myApi.model.TransferToken;
 import com.androidtitan.hackathon.server.CompleteTransferAsync;
-import com.androidtitan.hackathon.server.EndpointServerAsync;
-import com.androidtitan.hackathon.server.InitiateTransferAsync;
 
 /**
  * Created by amohnacs on 8/25/16.
@@ -17,7 +12,7 @@ import com.androidtitan.hackathon.server.InitiateTransferAsync;
 public class App extends Application {
 
     public String user = "Shauvik";
-    public String payer = "sam";
+    public static String payer = "sam";
     public String payee = "adam";
 
     @Override
@@ -28,13 +23,13 @@ public class App extends Application {
 
 
         // Send money request
-        TransferToken token = new TransferToken();
-        token.setPayer(payer);
-        token.setAmount(100.00);
-        new InitiateTransferAsync().execute(new Pair<Context, TransferToken>(this, token));
+//        TransferToken token = new TransferToken();
+//        token.setPayer(payer);
+//        token.setAmount(100.00);
+//        new InitiateTransferAsync().execute(new Pair<Context, TransferToken>(this, token));
 
         // Receive money
-        new CompleteTransferAsync().execute(new Pair<Context, Pair<String, String>>(this, new Pair<String, String>(payee, "e2Ftb3VudD0xMDAuMCwgcGF5ZXI9c2FtLCBzZWNyZXQ9czNjcjN0fQ==")));
+        new CompleteTransferAsync(this).execute(new Pair<String, String>(payee, "e2Ftb3VudD0xMDAuMCwgcGF5ZXI9c2FtLCBzZWNyZXQ9czNjcjN0fQ=="));
 
     }
 }

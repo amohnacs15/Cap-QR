@@ -1,13 +1,13 @@
 package com.androidtitan.hackathon.server;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.util.Pair;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.androidtitan.hackathon.myApi.MyApi;
 import com.androidtitan.hackathon.myApi.model.TransferToken;
+import com.androidtitan.hackathon.scanner.ShareCodeActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -20,19 +20,23 @@ import java.io.IOException;
  * Created by amohnacs on 8/27/16.
  */
 
-public class InitiateTransferAsync extends AsyncTask<Pair<Context, TransferToken>, Void, String> {
+public class InitiateTransferAsync extends AsyncTask<TransferToken, Void, String> {
 
     MyApi capService = null;
     private Context context;
 
+    public InitiateTransferAsync(Context ctx) {
+        this.context = ctx;
+    }
+
     @Override
-    protected String doInBackground(Pair<Context, TransferToken>... params) {
+    protected String doInBackground(TransferToken... params) {
 
         if(capService == null) {
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl("https://capqr-server.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
@@ -44,8 +48,7 @@ public class InitiateTransferAsync extends AsyncTask<Pair<Context, TransferToken
             capService = builder.build();
         }
 
-        context = params[0].first;
-        TransferToken tokenRequest = params[0].second;
+        TransferToken tokenRequest = params[0];
 
         try {
             String secret = capService.initiateTransfer(tokenRequest.getPayer(), tokenRequest.getAmount()).execute().getSecret();
@@ -61,6 +64,6 @@ public class InitiateTransferAsync extends AsyncTask<Pair<Context, TransferToken
     protected void onPostExecute(String result) {
 
         //TODO: make QR code and show here
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        context.startActivity(new Intent(ShareCodeActivity.newIntent(context, result)));
     }
 }

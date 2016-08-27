@@ -1,5 +1,7 @@
 package com.androidtitan.hackathon.transaction;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,6 +17,13 @@ import butterknife.ButterKnife;
 public class TransactionActivity extends BaseActivity {
 
     private final static int NUMBER_OF_PAGES = 2;
+    private static final String EXTRA_SELECTED_PAGE = "EXTRA_SELECTED_PAGE";
+
+    public static Intent newIntent(Context context, int selectedPage) {
+        Intent intent = new Intent(context, TransactionActivity.class);
+        intent.putExtra(EXTRA_SELECTED_PAGE, selectedPage);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +56,12 @@ public class TransactionActivity extends BaseActivity {
 
             }
         });
+
+        if (getIntent().getExtras().getInt(EXTRA_SELECTED_PAGE) == 0) {
+            viewPager.setCurrentItem(0);
+        } else {
+            viewPager.setCurrentItem(1);
+        }
     }
 
     private static class TransactionTypeAdapter extends FragmentPagerAdapter {

@@ -1,6 +1,5 @@
 package com.androidtitan.hackathon.transaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidtitan.hackathon.App;
 import com.androidtitan.hackathon.R;
-import com.androidtitan.hackathon.scanner.ShareCodeActivity;
+import com.androidtitan.hackathon.myApi.model.TransferToken;
+import com.androidtitan.hackathon.server.InitiateTransferAsync;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -43,6 +44,12 @@ public class SendMoneyFragment extends Fragment {
 
     @OnClick(R.id.create_code_button)
     public void submit(View view) {
-        startActivity(new Intent(ShareCodeActivity.newIntent(getContext(), 0)));
+
+        TransferToken token = new TransferToken();
+        token.setPayer(App.payer);
+        token.setAmount(100.00);
+        new InitiateTransferAsync(getActivity()).execute(token);
+
+
     }
 }

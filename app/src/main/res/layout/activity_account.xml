@@ -12,47 +12,50 @@
 
 
     <TextView
-        android:text="@string/accountInfo"
+        android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="122dp"
-        android:id="@+id/welcomeMessage" />
+        android:text="@string/accountInfo" />
 
     <TextView
-        android:text="$4000"
+        android:id="@+id/accountBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeMessage"
-        android:textSize="30sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:id="@+id/accountBalance" />
+        android:text="$4000"
+        android:textSize="30sp" />
 
     <TextView
-        android:text=""
+        android:id="@+id/accountStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="40dp"
         android:layout_below="@id/accountBalance"
         android:layout_centerHorizontal="true"
-        android:id="@+id/accountStatus" />
+        android:paddingTop="40dp"
+        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
-        <Button
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:text="@string/sendMoney"/>
 
         <Button
+            android:id="@+id/send_button"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="@string/receiveMoney"/>
+            android:text="@string/sendMoney" />
+
+        <Button
+            android:id="@+id/receive_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/receiveMoney" />
 
     </LinearLayout>
 </RelativeLayout>
