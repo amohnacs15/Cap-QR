@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.androidtitan.hackathon.R;
 import com.androidtitan.hackathon.base.BaseActivity;
-import com.androidtitan.hackathon.scanner.ScannerActivity;
+import com.androidtitan.hackathon.main.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,13 +69,9 @@ public class LoginActivity extends BaseActivity implements LoginMVP.View {
     @Override
     public void sendUserToMainActivity(String resultMessage) {
         //todo : this should send the user to a different activity than 'MainActivity'
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra(LOGIN_RESULT_EXTRA, resultMessage);
-//
-//        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(LOGIN_RESULT_EXTRA, resultMessage);
 
-        //Remove this upon merge
-        Intent intent = new Intent(this, ScannerActivity.class);
         startActivity(intent);
     }
 }

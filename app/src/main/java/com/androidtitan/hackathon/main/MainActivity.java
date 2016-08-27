@@ -3,18 +3,18 @@ package com.androidtitan.hackathon.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidtitan.hackathon.R;
 import com.androidtitan.hackathon.base.BaseActivity;
 import com.androidtitan.hackathon.login.LoginActivity;
+import com.androidtitan.hackathon.scanner.ScannerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,11 +69,8 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
             @Override
             public void onClick(View view) {
 
-                Snackbar.make(view, "Event Sent", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
-
-                Log.d(TAG, "sending event from View");
-                presenter.getSomething();
+                Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
+                startActivity(intent);
             }
         });
     }
