@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hackathon</string>
+    <string name="action_login">Login</string>
+    <string name="hint_password">password</string>
+    <string name="hint_email">email</string>
+    <string name="login">Login</string>
+    <string name="signout">Sign Out</string>
+
+</resources>
