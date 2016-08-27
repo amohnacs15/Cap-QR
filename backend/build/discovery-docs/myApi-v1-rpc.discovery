@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/jYhmDe8ty_aLtXDWQBJnlM1IVXU\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/Goucqyh4g9NVKm5uXz8SAkVR0gc\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -71,17 +71,80 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "Message": {
+   "id": "Message",
    "type": "object",
    "properties": {
     "data": {
      "type": "string"
     }
    }
+  },
+  "TransferToken": {
+   "id": "TransferToken",
+   "type": "object",
+   "properties": {
+    "amount": {
+     "type": "number",
+     "format": "double"
+    },
+    "payer": {
+     "type": "string"
+    },
+    "secret": {
+     "type": "string"
+    }
+   }
   }
  },
  "methods": {
+  "myApi.completeTransfer": {
+   "id": "myApi.completeTransfer",
+   "parameters": {
+    "payee": {
+     "type": "string",
+     "required": true
+    },
+    "token": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "payee",
+    "token"
+   ],
+   "returns": {
+    "$ref": "Message"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "myApi.initiateTransfer": {
+   "id": "myApi.initiateTransfer",
+   "parameters": {
+    "amount": {
+     "type": "number",
+     "required": true,
+     "format": "double"
+    },
+    "payer": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "payer",
+    "amount"
+   ],
+   "returns": {
+    "$ref": "TransferToken"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "myApi.sayHi": {
    "id": "myApi.sayHi",
    "parameters": {
@@ -94,7 +157,7 @@
     "name"
    ],
    "returns": {
-    "$ref": "MyBean"
+    "$ref": "Message"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

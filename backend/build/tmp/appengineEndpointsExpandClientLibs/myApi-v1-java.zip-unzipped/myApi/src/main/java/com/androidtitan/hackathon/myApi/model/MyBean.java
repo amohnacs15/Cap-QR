@@ -19,7 +19,7 @@
 package com.androidtitan.hackathon.myApi.model;
 
 /**
- * Model definition for MyBean.
+ * Model definition for Message.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the myApi. For a detailed explanation see:
