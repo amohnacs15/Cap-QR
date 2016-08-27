@@ -1,7 +1,6 @@
 package com.androidtitan.hackathon.server;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.util.Log;
@@ -63,6 +62,6 @@ public class CompleteTransferAsync extends AsyncTask<Pair<String, String>, Void,
 
     @Override
     protected void onPostExecute(String result) {
-        context.startActivity(new Intent(context, SuccessActivity.class));
+        context.startActivity(SuccessActivity.newIntent(context, true));
     }
 }

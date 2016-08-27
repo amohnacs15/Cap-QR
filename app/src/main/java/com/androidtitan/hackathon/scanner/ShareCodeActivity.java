@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ImageView;
 
 import com.androidtitan.hackathon.R;
+import com.androidtitan.hackathon.base.success.SuccessActivity;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -36,7 +38,7 @@ public class ShareCodeActivity extends Activity {
         setContentView(R.layout.activity_sharecode);
         ButterKnife.bind(this);
 
-        //setTitle(getString(R.string.share_the_code));
+        setTitle(getString(R.string.share_the_code));
 
         ImageView imageView = (ImageView) findViewById(R.id.share_code_imageView);
         try {
@@ -45,6 +47,13 @@ public class ShareCodeActivity extends Activity {
         } catch (WriterException e) {
             e.printStackTrace();
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(SuccessActivity.newIntent(ShareCodeActivity.this, false));
+            }
+        }, 15000);
 
     }
 

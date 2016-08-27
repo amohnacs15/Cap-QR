@@ -5,7 +5,14 @@
 
     <ImageView
         android:id="@+id/share_code_imageView"
+        android:layout_width="400dp"
+        android:layout_height="400dp" />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="@string/worth_100"/>
 
 </LinearLayout>

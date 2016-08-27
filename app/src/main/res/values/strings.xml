@@ -13,6 +13,9 @@
     <string name="create_code">Create Code</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="share_the_code">Share the Code</string>
+    <string name="worth_100">Worth $100</string>
+    <string name="congrats_you_apos_re_100_richer">Congrats, you\'re $100 richer!</string>
+    <string name="you_sent_money">You\'ve Successfully sent $100</string>
 
 
 </resources>
