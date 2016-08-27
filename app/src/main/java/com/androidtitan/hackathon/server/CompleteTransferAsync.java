@@ -1,4 +1,4 @@
-package com.androidtitan.hackathon;
+package com.androidtitan.hackathon.server;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -17,7 +17,7 @@ import java.io.IOException;
  * Created by amohnacs on 8/27/16.
  */
 
-public class EndpointServerAsync extends AsyncTask<Pair<Context, String>, Void, String> {
+public class CompleteTransferAsync extends AsyncTask<Pair<Context, String>, Void, String> {
 
     MyApi capService = null;
     private Context context;

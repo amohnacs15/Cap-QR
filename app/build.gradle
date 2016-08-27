@@ -49,7 +49,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.3.0'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
 
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+//    compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
     //Zxing
     compile 'com.journeyapps:zxing-android-embedded:2.3.0@aar'
