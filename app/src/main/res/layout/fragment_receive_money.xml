@@ -22,7 +22,9 @@
             android:id="@+id/scan_code_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/scan_qr_code" />
+            android:text="@string/scan_qr_code"
+            android:background="@color/colorGreen"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 

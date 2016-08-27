@@ -93,7 +93,10 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/signInButton" />
+        android:id="@+id/signInButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 
 </RelativeLayout>

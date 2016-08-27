@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.util.Pair;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Menu;
 
 import com.androidtitan.hackathon.App;
 import com.androidtitan.hackathon.R;
@@ -37,6 +38,10 @@ public class TransactionActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payerpayee);
         ButterKnife.bind(this);
+
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setElevation(0);
+        }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Send Money"));
@@ -105,5 +110,11 @@ public class TransactionActivity extends BaseActivity {
                 }
                 break;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 }

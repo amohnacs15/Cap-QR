@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.androidtitan.hackathon.login.AccountActivity"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:background="@color/colorPrimary">
 
 
@@ -18,7 +17,7 @@
         android:layout_marginTop="122dp"
         android:layout_marginLeft="16dp"
         android:textColor="@android:color/white"
-        android:text="@string/accountInfo"/>
+        android:text="Welcome, you currently have"/>
 
     <TextView
         android:id="@+id/accountBalance"
@@ -26,11 +25,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeMessage"
         android:textSize="60sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:textColor="@android:color/white"
-        android:text="$4000"/>
+        android:text="$4000"
+        android:visibility="invisible"/>
 
+    <TextView
+        android:id="@+id/accountStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accountBalance"
+        android:layout_marginLeft="16dp"
+        android:textColor="@android:color/white"
+        android:text="awesome..."
+        android:visibility="invisible"/>/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +56,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:padding="8dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/sendMoney"
             android:textColor="@android:color/white"
@@ -60,6 +70,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginLeft="1dp"
             android:text="@string/receiveMoney"

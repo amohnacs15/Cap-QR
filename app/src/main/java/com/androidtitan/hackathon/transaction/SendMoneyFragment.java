@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.androidtitan.hackathon.App;
@@ -22,6 +23,8 @@ public class SendMoneyFragment extends Fragment {
 
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
+    @BindView(R.id.input_password)
+    EditText editText;
     @BindView(R.id.create_code_button)
     Button createCodeButton;
 
@@ -33,6 +36,7 @@ public class SendMoneyFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Nullable
@@ -40,7 +44,12 @@ public class SendMoneyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_send_money, container, false);
+        View v = inflater.inflate(R.layout.fragment_send_money, container, false);
+        ButterKnife.bind(getActivity(), v);
+
+
+
+        return v;
     }
 
     @Override

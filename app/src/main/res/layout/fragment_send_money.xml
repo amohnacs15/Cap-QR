@@ -23,7 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:hint="@string/enter_amount_to_send" />
+                android:hint="@string/enter_amount_to_send"
+                android:textSize="60dp"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@null"
+                android:backgroundTint="@android:color/darker_gray"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -35,7 +39,9 @@
                 android:id="@+id/create_code_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/create_code" />
+                android:text="@string/create_code"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"
