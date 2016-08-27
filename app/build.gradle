@@ -7,7 +7,7 @@ android {
     buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "com.androidtitan.hackathon"
-        minSdkVersion 22
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -46,6 +46,12 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
 
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
+
+    //Zxing
+    compile 'com.journeyapps:zxing-android-embedded:2.3.0@aar'
+    compile 'com.journeyapps:zxing-android-legacy:2.3.0@aar'
+    compile 'com.journeyapps:zxing-android-integration:2.3.0@aar'
+    compile 'com.google.zxing:core:3.2.0'
 
 }
 
