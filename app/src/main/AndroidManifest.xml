@@ -24,6 +24,7 @@
         <activity android:name=".login.AccountActivity"></activity>
         <activity android:name=".scanner.ScannerActivity"></activity>
         <activity android:name=".scanner.ShareCodeActivity"></activity>
+        <activity android:name=".base.success.SuccessActivity"></activity>
         <activity android:name=".transaction.TransactionActivity"></activity>
 
     </application>

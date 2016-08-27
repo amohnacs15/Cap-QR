@@ -1,11 +1,12 @@
 package com.androidtitan.hackathon.server;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.util.Log;
-import android.widget.Toast;
 
+import com.androidtitan.hackathon.base.success.SuccessActivity;
 import com.androidtitan.hackathon.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -62,6 +63,6 @@ public class CompleteTransferAsync extends AsyncTask<Pair<String, String>, Void,
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        context.startActivity(new Intent(context, SuccessActivity.class));
     }
 }
