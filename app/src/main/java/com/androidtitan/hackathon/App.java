@@ -1,9 +1,6 @@
 package com.androidtitan.hackathon;
 
 import android.app.Application;
-import android.support.v4.util.Pair;
-
-import com.androidtitan.hackathon.server.CompleteTransferAsync;
 
 /**
  * Created by amohnacs on 8/25/16.
@@ -13,7 +10,7 @@ public class App extends Application {
 
     public String user = "Shauvik";
     public static String payer = "sam";
-    public String payee = "adam";
+    public static String payee = "adam";
 
     @Override
     public void onCreate() {
@@ -29,7 +26,7 @@ public class App extends Application {
 //        new InitiateTransferAsync().execute(new Pair<Context, TransferToken>(this, token));
 
         // Receive money
-        new CompleteTransferAsync(this).execute(new Pair<String, String>(payee, "e2Ftb3VudD0xMDAuMCwgcGF5ZXI9c2FtLCBzZWNyZXQ9czNjcjN0fQ=="));
+        //new CompleteTransferAsync(this).execute(new Pair<String, String>(payee, "e2Ftb3VudD0xMDAuMCwgcGF5ZXI9c2FtLCBzZWNyZXQ9czNjcjN0fQ=="));
 
     }
 }

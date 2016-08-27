@@ -1,5 +1,6 @@
 package com.androidtitan.hackathon.transaction;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +8,16 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.util.Pair;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
+import com.androidtitan.hackathon.App;
 import com.androidtitan.hackathon.R;
 import com.androidtitan.hackathon.base.BaseActivity;
+import com.androidtitan.hackathon.server.CompleteTransferAsync;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import butterknife.ButterKnife;
 
@@ -78,6 +85,25 @@ public class TransactionActivity extends BaseActivity {
         @Override
         public Fragment getItem(int position) {
             return position == 0 ? SendMoneyFragment.newInstance() : ReceiveMoneyFragment.newInstance();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+
+        switch (requestCode) {
+            case IntentIntegrator.REQUEST_CODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    // Parsing bar code reader result
+                    IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+
+                    Log.d("SCAN RESULTS",  result.getContents());
+                    new CompleteTransferAsync(this).execute(new Pair<String, String>(App.payee, result.getContents()));
+
+
+                }
+                break;
         }
     }
 }

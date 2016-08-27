@@ -3,6 +3,7 @@ package com.androidtitan.hackathon.server;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.androidtitan.hackathon.myApi.MyApi;
@@ -33,7 +34,7 @@ public class CompleteTransferAsync extends AsyncTask<Pair<String, String>, Void,
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl("https://capqr-server.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
@@ -53,6 +54,7 @@ public class CompleteTransferAsync extends AsyncTask<Pair<String, String>, Void,
         try {
             return capService.completeTransfer(payee, token).execute().getData();
         } catch (IOException e) {
+            Log.e("Scan Error", e.getMessage());
             return e.getMessage();
         }
 

@@ -3,7 +3,6 @@ package com.androidtitan.hackathon.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidtitan.hackathon.R;
@@ -22,13 +21,10 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
 
     public static final String LOGIN_RESULT_EXTRA = "loginactivity.loginresultextra";
 
-
-    @BindView(R.id.accountStatus)
-    TextView accountStatus;
     @BindView(R.id.send_button)
-    Button sendButton;
+    TextView sendButton;
     @BindView(R.id.receive_button)
-    Button receiveButton;
+    TextView receiveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +33,8 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
         ButterKnife.bind(this);
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy h:mm a");
         String currentDateTime = dateFormat.format(new Date());
-        accountStatus.setText("as of " + currentDateTime + " to send");
+        //accountStatus.setText("as of " + currentDateTime + " to send");
 
-
-        accountStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
