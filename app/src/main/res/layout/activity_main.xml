@@ -1,49 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.androidtitan.hackathon.main.MainActivity">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="?attr/colorPrimary">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:contentDescription="Hello"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_capqr"/>
+        </android.support.v7.widget.Toolbar>
+
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/result_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
-        android:padding="16dp"
-        android:text="Hello World!" />
-
-    <TextView
-        android:id="@+id/signout_TextView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/signout"/>
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/text_input_layout">
 
-</android.support.design.widget.CoordinatorLayout>
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:hint="Username"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:minWidth="350dp"
+                android:drawableLeft="@drawable/icon_profile"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/icon_profile"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@null"
+                app:backgroundTint="@android:color/white"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:hint="Password"
+                android:drawablePadding="4dp"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:minWidth="350dp"
+                android:drawableLeft="@drawable/ic_https_black_24dp"
+                android:drawableStart="@drawable/ic_https_black_24dp"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@null"
+                app:backgroundTint="@android:color/white"/>
+
+
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:text="Sign in"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button2" />
+
+
+</RelativeLayout>

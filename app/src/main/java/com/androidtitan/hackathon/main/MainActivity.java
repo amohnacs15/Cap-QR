@@ -2,11 +2,9 @@ package com.androidtitan.hackathon.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +14,6 @@ import com.androidtitan.hackathon.base.BaseActivity;
 import com.androidtitan.hackathon.login.LoginActivity;
 import com.androidtitan.hackathon.scanner.ScannerActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*(
@@ -29,11 +26,6 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
     private static final String TAG = "MainActivity";
 
     private MainPresenter presenter;
-
-    @BindView(R.id.result_TextView)
-    TextView resultTextView;
-    @BindView(R.id.signout_TextView)
-    TextView signOutTextView;
 
     private String resultString;
 
@@ -49,30 +41,6 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
         presenter = MainPresenter.getInstance(this);
         presenter.attachView(this);
 
-        signOutTextView.setVisibility(View.INVISIBLE);
-
-        if(getIntent() != null) {
-            resultString = getIntent().getStringExtra(LoginActivity.LOGIN_RESULT_EXTRA);
-            resultTextView.setText(resultString);
-            signOutTextView.setVisibility(View.VISIBLE);
-        }
-
-        signOutTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.signOutUser();
-            }
-        });
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
