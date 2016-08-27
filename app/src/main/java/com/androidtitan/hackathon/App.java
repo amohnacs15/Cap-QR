@@ -6,6 +6,7 @@ import android.support.v4.util.Pair;
 
 
 import com.androidtitan.hackathon.myApi.model.TransferToken;
+import com.androidtitan.hackathon.server.CompleteTransferAsync;
 import com.androidtitan.hackathon.server.EndpointServerAsync;
 import com.androidtitan.hackathon.server.InitiateTransferAsync;
 
@@ -32,7 +33,8 @@ public class App extends Application {
         token.setAmount(100.00);
         new InitiateTransferAsync().execute(new Pair<Context, TransferToken>(this, token));
 
-
+        // Receive money
+        new CompleteTransferAsync().execute(new Pair<Context, Pair<String, String>>(this, new Pair<String, String>(payee, "e2Ftb3VudD0xMDAuMCwgcGF5ZXI9c2FtLCBzZWNyZXQ9czNjcjN0fQ==")));
 
     }
 }

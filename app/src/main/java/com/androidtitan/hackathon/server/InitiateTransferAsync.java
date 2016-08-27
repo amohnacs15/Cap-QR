@@ -3,6 +3,7 @@ package com.androidtitan.hackathon.server;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.androidtitan.hackathon.myApi.MyApi;
@@ -49,6 +50,7 @@ public class InitiateTransferAsync extends AsyncTask<Pair<Context, TransferToken
         try {
             String secret = capService.initiateTransfer(tokenRequest.getPayer(), tokenRequest.getAmount()).execute().getSecret();
             tokenRequest.setSecret(secret);
+            Log.d("Token Request", Base64.encodeBase64String(tokenRequest.toString().getBytes()));
             return Base64.encodeBase64String(tokenRequest.toString().getBytes());
         } catch (IOException e) {
             return e.getMessage();

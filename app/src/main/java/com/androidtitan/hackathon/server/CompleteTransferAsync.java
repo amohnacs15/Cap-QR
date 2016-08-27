@@ -17,13 +17,13 @@ import java.io.IOException;
  * Created by amohnacs on 8/27/16.
  */
 
-public class CompleteTransferAsync extends AsyncTask<Pair<Context, String>, Void, String> {
+public class CompleteTransferAsync extends AsyncTask<Pair<Context, Pair<String, String>>, Void, String> {
 
     MyApi capService = null;
     private Context context;
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(Pair<Context, Pair<String, String>>... params) {
 
         if(capService == null) {
 
@@ -42,10 +42,13 @@ public class CompleteTransferAsync extends AsyncTask<Pair<Context, String>, Void
         }
 
         context = params[0].first;
-        String name = params[0].second;
+        Pair<String, String> details = params[0].second;
+
+        String payee = details.first;
+        String token = details.second;
 
         try {
-            return capService.sayHi(name).execute().getData();
+            return capService.completeTransfer(payee, token).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
