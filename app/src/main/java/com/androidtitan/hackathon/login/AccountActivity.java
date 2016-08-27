@@ -28,6 +28,7 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
 
     public static final String LOGIN_RESULT_EXTRA = "loginactivity.loginresultextra";
     private static final int SLIDE_ANIM_DURATION = 300;
+    private static final String EXTRA_AMOUNT = "EXTRA_AMOUNT";
 
 
     @BindView(R.id.welcomeMessage)
@@ -43,6 +44,12 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
 
     Handler handler;
     Animation fadeIn;
+
+    public static Intent newIntent(Context context, String amount) {
+        Intent intent = new Intent(context, AccountActivity.class);
+        intent.putExtra(EXTRA_AMOUNT, amount);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +101,10 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
 
             }
         });
+
+        if(getIntent().hasExtra(EXTRA_AMOUNT)) {
+            accountBalance.setText(getIntent().getExtras().getString(EXTRA_AMOUNT));
+        }
     }
 
     @Override
