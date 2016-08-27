@@ -17,14 +17,16 @@ We built an Android App with two modes to Send and Receive money. The apps are d
 The main challenge was to get the ZXing library to work as we intended it to function. Once that was done, we spent some time with design and getting the app flow right.
 
 #Accomplishments that we're proud of
--Increasing security of the P2P money transfers
--Beautifully designed Material app
--Working transfer between the payer and payee
--Integration with Capital One API
-#What we learned
--ZXing library for generating and capturing QR codes
--Appengine Cloud Endpoints for Android
--Swagger and API design/use
--Capital-one API
-#What's next for Cap-QR
+* Increasing security of the P2P money transfers
+* Beautifully designed Material app
+* Working transfer between the payer and payee
+* Integration with Capital One API
+
+# What we learned
+* ZXing library for generating and capturing QR codes
+* Appengine Cloud Endpoints for Android
+* Swagger and API design/use
+* Capital-one API
+
+# What's next for Cap-QR
 We want to test the different flows to make the app reliable. Next, we want to use a real banking API and hopefully release it on Google play store. Finally, we will work on prototyping an iOS version and test it out thoroughly with the flow.
