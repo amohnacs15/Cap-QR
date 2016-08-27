@@ -1,3 +1,6 @@
+#Project Video
+https://youtu.be/x06CjvRycts
+
 #Inspiration
 We deal with new people everyday. May it be buying something from a person we met on Craigslist or paying a food truck driver for that taco -- it's always awkward sharing credit cards or paypal/venmo details with strangers. For true privacy, we need to carry cash, sometimes exact change!
 
