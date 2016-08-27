@@ -36,5 +36,6 @@ appengine {
   endpoints {
     getClientLibsOnBuild = true
     getDiscoveryDocsOnBuild = true
+    clientLibJarOut = file("../app/libs")
   }
 }
