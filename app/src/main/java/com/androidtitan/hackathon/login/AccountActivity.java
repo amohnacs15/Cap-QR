@@ -19,6 +19,7 @@ import com.androidtitan.hackathon.transaction.TransactionActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,7 +56,7 @@ public class AccountActivity extends BaseActivity implements LoginMVP.View {
             getSupportActionBar().setElevation(0);
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy h:mm a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy h:mm a", Locale.US);
         String currentDateTime = dateFormat.format(new Date());
         accountStatus.setText("as of " + currentDateTime + " to send");
 
