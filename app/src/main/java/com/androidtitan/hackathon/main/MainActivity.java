@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.androidtitan.hackathon.R;
 import com.androidtitan.hackathon.base.BaseActivity;
 import com.androidtitan.hackathon.login.LoginActivity;
-import com.androidtitan.hackathon.scanner.ScannerActivity;
+import com.androidtitan.hackathon.transaction.TransactionActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,7 +69,10 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
+                //Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
+                //startActivity(intent);
+
+                Intent intent = new Intent(MainActivity.this, TransactionActivity.class);
                 startActivity(intent);
             }
         });

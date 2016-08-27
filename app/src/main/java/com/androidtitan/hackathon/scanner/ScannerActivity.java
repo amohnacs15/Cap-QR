@@ -18,8 +18,7 @@ import butterknife.ButterKnife;
 public class ScannerActivity extends BaseActivity  {
     private static final String TAG = "ScannerActivity";
 
-    @BindView(R.id.scan_button)
-    Button scanButton;
+    @BindView(R.id.scan_button) Button scanButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

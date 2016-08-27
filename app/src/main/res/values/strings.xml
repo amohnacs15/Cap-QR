@@ -1,10 +1,14 @@
 <resources>
-    <string name="app_name">Hackathon</string>
+    <string name="app_name">CapQR</string>
     <string name="action_login">Login</string>
     <string name="hint_password">password</string>
     <string name="hint_email">email</string>
     <string name="login">Login</string>
     <string name="signout">Sign Out</string>
     <string name="scan">scan</string>
+    <string name="enter_amount_to_send">Enter Amount to Send</string>
+    <string name="create_code">Create Code</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="share_the_code">Share the Code</string>
 
 </resources>
