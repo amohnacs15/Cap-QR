@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/send_money_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,25 +13,31 @@
         android:paddingRight="16dp"
         android:paddingTop="48dp">
 
+        <TextView
+            android:id="@+id/amountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_amount_to_send"
+            android:textColor="@android:color/darker_gray"/>
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/amountText">
 
             <EditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:hint="@string/enter_amount_to_send"
-                android:textSize="60dp"
-                android:textColor="@android:color/black"
-                android:textCursorDrawable="@null"
-                android:backgroundTint="@android:color/darker_gray"/>
+                android:hint=""
+                android:textSize="60dp"/>
 
         </android.support.design.widget.TextInputLayout>
 
         <RelativeLayout
+            android:layout_below="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -52,6 +58,6 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

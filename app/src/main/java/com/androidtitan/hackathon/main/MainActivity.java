@@ -28,8 +28,6 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
     private static final String TAG = "MainActivity";
 
 
-    private String resultString;
-
     @BindView(R.id.signInButton)
     Button signInButton;
 
@@ -43,7 +41,9 @@ public class MainActivity extends BaseActivity implements MainMVP.View {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("");
+        }
 
         final Intent intent = new Intent(this, AccountActivity.class);
         signInButton.setOnClickListener(new OnClickListener() {
